@@ -1,8 +1,9 @@
 package com.yee.springmvc.dao;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component("helloDao")
+@Service(value = "helloDao")
 public class HelloDao {
 
     public HelloDao() {

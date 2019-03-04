@@ -29,8 +29,8 @@
   <version>1.0-SNAPSHOT</version>
   <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <springversion>3.1.1.RELEASE</springversion>
-        <junitversion>3.8.1</junitversion>
+        <springversion>4.1.2.RELEASE</springversion>
+        <junitversion>4.1.2</junitversion>
       </properties>
 
       <dependencies>
@@ -153,13 +153,13 @@
           <scope>compile</scope>
         </dependency>
 
-        <dependency>
+     <!--   <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>jstl</artifactId>
           <version>1.2</version>
           <type>jar</type>
           <scope>compile</scope>
-        </dependency>
+        </dependency>-->
 
         <dependency>
           <groupId>commons-collections</groupId>

@@ -1,6 +1,8 @@
 package com.yee.springmvc.controller;
 
 import com.yee.springmvc.bean.UserBean;
+import com.yee.springmvc.dao.HelloDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,16 +18,22 @@ import java.util.Map;
 @SessionAttributes({"user"})
 public class HelloController {
 
-    @RequestMapping(value = "/testSession",produces = "application/json;charset=UTF-8")
-    @ResponseBody
-    public Map<String, Object> testSessionAttributes(Map<String,Object> userBeanMap){
+    @Autowired
+    private HelloDao helloDao;
+
+    public HelloController() {
+        System.out.println("hellocontroller");
+        helloDao.printHelloDao();
+    }
+
+    @RequestMapping(value = "/testSession")
+    public   @ResponseBody UserBean testSessionAttributes(Map<String,Object> userBeanMap){
         UserBean userBean = new UserBean();
         userBean.setUsername("ixin");
         userBean.setEmail("236640000@qq.com");
         userBean.setPassword("123123123123");
         userBeanMap.put("user",userBean);
-
-        return userBeanMap;
+        return userBean;
     }
 
     @RequestMapping("/testMap")

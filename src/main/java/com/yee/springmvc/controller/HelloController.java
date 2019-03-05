@@ -23,7 +23,7 @@ public class HelloController {
 
     public HelloController() {
         System.out.println("hellocontroller");
-        helloDao.printHelloDao();
+//        helloDao.printHelloDao();
     }
 
     @RequestMapping(value = "/testSession")
@@ -33,6 +33,7 @@ public class HelloController {
         userBean.setEmail("236640000@qq.com");
         userBean.setPassword("123123123123");
         userBeanMap.put("user",userBean);
+        helloDao.printHelloDao();
         return userBean;
     }
 

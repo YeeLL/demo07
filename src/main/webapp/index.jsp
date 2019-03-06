@@ -12,7 +12,8 @@
 </head>
 <body>
 
-<form method="post" action="/hello">
+<form method="post" action="/getUser">
+    <input type="text" name="id">
     <input type="submit" value="hello">
 </form>
     <a href="hello"> hello</a>

@@ -1,7 +1,8 @@
 package com.yee.springmvc.controller;
 
+import com.yee.springmvc.bean.Employee;
 import com.yee.springmvc.bean.UserBean;
-import com.yee.springmvc.dao.HelloDao;
+import com.yee.springmvc.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,14 +20,20 @@ import java.util.Map;
 public class HelloController {
 
     @Autowired
-    private HelloDao helloDao;
+    HelloService helloService;
 
     public HelloController() {
         System.out.println("hellocontroller");
 //        helloDao.printHelloDao();
-    }
+// }
 
-    @RequestMapping(value = "/testSession")
+    }
+    @RequestMapping(value = "/getUser")
+    @ResponseBody
+    public Employee getEmployee(@PathVariable("id") int id){
+            return helloService.getEmp(id);
+    }
+ /*   @RequestMapping(value = "/testSession")
     public   @ResponseBody UserBean testSessionAttributes(Map<String,Object> userBeanMap){
         UserBean userBean = new UserBean();
         userBean.setUsername("ixin");
@@ -36,7 +43,7 @@ public class HelloController {
         helloDao.printHelloDao();
         return userBean;
     }
-
+*/
     @RequestMapping("/testMap")
     public String testMap(Map<String,Object> map){
         map.put("names", Arrays.asList("TOME","JERRY","mike"));

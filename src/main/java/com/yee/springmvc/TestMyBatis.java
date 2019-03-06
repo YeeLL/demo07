@@ -1,7 +1,7 @@
 package com.yee.springmvc;
 
 import com.yee.springmvc.bean.Employee;
-import com.yee.springmvc.dao.EmployeeMapper;
+import com.yee.springmvc.mapper.EmployeeMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
